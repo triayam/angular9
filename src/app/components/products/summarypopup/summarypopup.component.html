@@ -1,0 +1,35 @@
+   
+
+        <div class="shopping-cart">
+             <div class="shopping-cart-header">
+            <i class="fa fa-shopping-cart cart-icon"></i><span class="small-badge">{{items?.length || '0'}}</span>
+            <div class="shopping-cart-total">
+              <span class="lighter-text">Total:</span>
+              <span class="main-color-text">$ {{total}}</span>
+            </div>
+          </div>   <!--end shopping-cart-header -->
+
+          <ul class="shopping-cart-items">
+            <li class="clearfix" *ngFor="let prod of items">
+              <span class="item-name">{{prod.productName}}</span>
+              <span class="item-price">Cost: {{prod.productCost}}</span>
+              <span class="item-quantity">Quantity: 01</span>
+            </li>
+
+          </ul>
+           
+           <div *ngIf="total; else isLoogedOut">
+            <button type="button" class="btn basic">
+              <a  class="basic" routerLink="/checkoutproducts/summary" routerLinkActive="active">Checkout</a>
+             </button>
+            </div>
+           
+           <ng-template #isLoogedOut>
+              <button type="button" class="btn basic disabled">
+                <a  class="basic" href="javascript:void(0)" routerLink="/checkoutproducts/summary" routerLinkActive="active">Checkout</a>
+              </button>
+            </ng-template>
+        </div> <!--end shopping-cart   -->
+
+<router-outlet>
+</router-outlet>

@@ -1,0 +1,45 @@
+.bg-panel{
+    
+   padding: 10px 10px 20px 20px;
+}
+.panel-primary {
+    background-color: beige;
+}
+.input-align{
+    width: 80%;
+    height : 30px; 
+    /*padding : 0, 0 1px 2px;*/
+    
+}
+.input-label{
+    width: 70%;
+    height : 2px; 
+    padding : 0, 0 1px 1px;
+    font-size: 80%;
+    font-weight: 200;
+    font-family: Verdana,sans-serif;
+    
+}
+.input-date-label {
+    height: 2px;
+    font-size: 80%;
+    font-family: Verdana,sans-serif;
+    width: 20%;
+}
+.input-date-mm {
+   width: 70px;
+   diplay:inline-block;
+    height: 35px;
+}
+.input-date-yy {
+   width: 85px;
+   diplay:inline-block;
+    height: 35px;
+}
+.compact { 
+   padding: 0;
+    text-align: left;
+    margin: 2px;
+    
+    display: inline-flex;
+}

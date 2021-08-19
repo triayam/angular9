@@ -1,0 +1,89 @@
+
+ <!-- form>(div.form-group>label+input[formControlName].formControl)*12 -->
+ 
+   <div class="container">
+    <h4> <i class="fa fa-file"></i> File Transfer </h4> 
+     <form #f="ngForm">
+       
+       <div class="form-group row">
+         <label id="fileName" for="fileName" class="col-3 col-form-label">File Name </label>
+         <div class="col-3">
+           <input type="text" class="form-control" name="inputName" id="inputName" placeholder="" [(ngModel)] = "fileUpload.name"/>
+         </div>
+       </div>
+       <div class="form-group row">
+        <label for="fileDate" class="col-3 col-form-label">File Date </label>
+        <!-- <div class="col-3">
+          <input type="text" class="form-control" name="fileDate" id="fileDate" placeholder="" [(ngModel)]={fileUpload.date}>
+        </div> -->
+        <div class="container">
+          <input type="text" #dp="bsDatepicker" bsDatepicker [(bsValue)]="fileUpload.date">
+          <div class="custom-content" *ngIf="dp.isOpen">
+              <a (click)="customAction()">{{fileUpload.date | date:'short'}}</a>
+          </div>
+         </div>
+      </div>
+       <fieldset class="form-group row">
+         <legend class="col ">File Attributes</legend>
+         <div class="col ">
+          <label class="col-form-label-sm">Type</label> 
+          <div class="custom-control mb">
+            <div> Selected Option : {{optSelected}} </div>
+            <div *ngFor="let option of fileUpload.ftype; let i=index" class=" pull-left pr-4">
+            <label class="col-form-label-sm  pr-2">
+            <input type="radio" name="{{option.type}}"   [(ngModel)]="optSelected" value="{{option.value}}" (change) ="onTypeChange(option)" class="hide"/>
+            <i class="fa fa-fw fa-check-circle" aria-hidden="true"></i>&nbsp;
+            <i [ngClass]="{ fa: true, 'fa-file-pdf-o' :option.value === 'pdf',  'fa-file-image-o' :option.value === 'txt', 'fa-file-archive-o' : option.value === 'zip'}" aria-hidden="true"> </i>
+              
+           </label> 
+          </div>
+          <!--   <label class=" " >
+              <input type="radio" name="{{option.type}}" id="{{option.type}}+ {{i}}"  [(ngModel)]="option.value"   class="hide"/>
+              <i class="fa fa-fw fa-check-circle" aria-hidden="true"></i>&nbsp;<i class="fa fa-file-image-o " aria-hidden="true"></i></label>
+           
+              <label class=" ">
+              <input type="radio" name="{{option.type}}" id="{{option.type}}+ {{i}}"  [(ngModel)]="option.value"   class="hide"/>
+              <i class="fa fa-fw fa-check-circle" aria-hidden="true"></i>&nbsp;<i class="fa fa-file-archive-o" aria-hidden="true"></i></label>
+              -->
+          </div>
+         </div>
+        <div class="col ">
+          <label class="col-form-label-sm">Size</label>
+          <div class="custom-control  mb">
+              <input type="checkbox"  name="fileUpload.size" id="fileUpload.size"  class="">
+             <label class="" for="fileUpload.size"> <i class="fa fa-database fa-0x" aria-hidden="true">< 10 MB</i> </label>
+            
+          
+            <input type="checkbox"  name="fileUpload.size" id="fileUpload.size"  class="">
+           <label class="" for="fileUpload.size"> <i class="fa fa-database fa-1.5x" aria-hidden="true">< 50 MB</i>  </label>
+          
+         
+          <input type="checkbox"  name="fileUpload.size" id="fileUpload.size"  class="">
+         <label class="" for="fileUpload.size"> <i class="fa fa-database fa-2x" aria-hidden="true"></i>  < 200 MB</label>
+        
+       </div>
+           <!--<label class="custom-control custom-checkbox">
+            
+             <span class="custom-control-indicator"></span>
+               <i class="fa fa-database" aria-hidden="true"></i>
+           </label>-->
+           </div>
+         
+
+       </fieldset>
+       <div class="form-group row">
+
+         <div class="offset-sm-2 col">
+           <button type="button" class="btn btn-primary">Validate</button>
+         </div>
+         <div class="offset-sm-2 col">
+           <button type="submit" class="btn btn-primary">Submit</button>
+         </div>
+       
+    
+       </div>
+     </form>
+   </div>
+     
+
+

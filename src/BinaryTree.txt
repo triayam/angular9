@@ -1,0 +1,68 @@
+public class HelloWorld{
+
+     public static void main(String []args){
+        System.out.println("Node World");
+
+        Node root = new Node();
+        root.val = 5 ;
+
+
+     }
+
+
+}
+class BinaryTree {
+    Node root ;
+
+    public boolean add(Node b){
+        if (b !=null && b.val !=-1){
+            if ( root !=null ) {
+                if (root.val > b.val ) {
+                   root.left = addChild(root.left, b);
+                }
+                else if ( root.val < b.val ) {
+                    root.right = addChild(root.right, b);
+                }
+            }
+            else {
+                root = new Node();
+                 root.val  = b.val;
+
+            }
+           return true;
+        }
+        else {
+            return false;
+        }
+
+    }
+
+    private Node addChild(Node toAdd, Node elem){
+         if ( toAdd != null ) {
+
+            if (toAdd.val > elem.val ) {
+                 toAdd.left =   addChild(toAdd.left, elem);
+
+             }
+             else if ( toAdd.val < elem.val ) {
+                 toAdd.right =   addChild(toAdd.right,elem);
+              }
+         }
+         else {
+                toAdd = new Node();
+                toAdd.val  = elem.val;
+
+         }
+          return toAdd;
+    }
+
+}
+class Node {
+    Node left , right ;
+    int val ;
+
+
+}
+
+
+

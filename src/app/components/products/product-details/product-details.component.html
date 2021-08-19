@@ -1,0 +1,18 @@
+
+<div class="col-2 col-md-3">
+<div class="product-details">
+  <div class="product">
+  <app-spa-product [name]="product.name"
+                   [productName]="product.productName"
+                   [productCost]="product.productCost"
+                   [productLogo]="product.productLogo"
+  ></app-spa-product>
+    <app-spa-color-list [colors]="product.colors"></app-spa-color-list>
+    <button class="add-to-cart btn btn-info" (click)="addToCart(product)">
+      Add to bag
+    </button>
+     <button  class="add-to-cart btn btn-light" routerLink="/shipproducts" routerLinkActive="active"> Back to List </button>
+  </div>
+  <router-outlet></router-outlet>
+</div>
+</div>

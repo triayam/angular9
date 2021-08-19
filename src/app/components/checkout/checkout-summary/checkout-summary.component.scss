@@ -1,0 +1,33 @@
+.table-row {
+    display: table-cell;
+    width: 100%;
+}
+.row-list {
+  
+  width:50%;
+  height:50%;
+  font-size: 70%;
+   border-width: 2px;
+   border-radius: 3px;
+  padding: 5px;
+    
+}
+.row-list img {
+    max-width: 20%;
+    max-height: 20%;
+    
+}
+.row-list h3 {
+   text-align : left;
+ /*  font-size: 24px; */
+  font-width: 500;
+  line-height: 1px;
+  margin: 0px;
+  padding: 0px;
+ /* border-bottom: 1px solid #ccc4c4; */
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+}
+.row-list span {
+    font-size: 70%;
+}

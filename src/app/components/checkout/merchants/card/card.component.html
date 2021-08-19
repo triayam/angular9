@@ -1,0 +1,37 @@
+<div class="row" >
+  <div class="col-lg-6 text-left">
+    <div class="panel panel-primary">
+      
+      <div class="panel-heading ">
+          <span class="card-text "> Card Payment </span>
+      </div>
+    <div class="panel-body bg-panel " >
+      <form class="" action="submit()">
+        <!--<div class="col-lg-6 text-center">-->
+      <!-- <div class="col-md-4 text-center"> -->
+         <label class="input-label" for="cardname">Name on Card:</label>
+
+          <input type="text" class="form-control input-align" id="cardname" >
+      <!--  </div>
+       <div class="col-md-4 text-center">-->
+          <label class="input-label" for="cardname">Credit Card No :</label>
+
+           <input type="text" class="form-control input-align" id="cardno" >
+    <!--
+        </div>
+           <div class="col-md-4 text-center">
+    -->
+         <label class="input-label input-date-label" for="expirydate">Expires on :</label>
+          <div class="compact">MM<select type="text" class="form-control input-date-mm" id="expirymm" min=1 max=12 >
+                    <option *ngFor="let m of mm" [ngValue]="m">{{m}}</option>
+               </select>
+          <span>YY</span><select type="text" class="form-control input-date-yy" id="expiryyy" min=2020 max=2050 >
+             <option *ngFor="let y of yy" [ngValue]="y">{{y}}</option>
+               </select>
+            </div>
+      <!--  </div>-->
+      </form>
+      </div>
+    </div>
+</div>
+ </div>

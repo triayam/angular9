@@ -1,0 +1,41 @@
+::ng-deep.bs-datepicker {
+    height: 150px;
+  }
+
+
+  .custom-content {
+    position: absolute;
+    z-index: 1081;
+    top: 390px;
+    cursor: pointer;
+    align-self: center;
+  }
+
+
+  .hide { display:none; width: 30px;}
+
+  input[type="checkbox"] + .fa, 
+  label > input[type="checkbox"] +  .fa, 
+  input[type="radio"] + .fa, 
+  label > input[type="radio"] +  .fa 
+  { cursor: pointer;}
+  /* unchecked */ 
+  label > input[type="radio"] + .fa-check-circle:before
+ /*  label > input[type="radio"] + .fa-file-pdf-o:before,
+  label > input[type="radio"] + .fa-file-archive-o:before,
+  label > input[type="radio"] + .fa-file-image-o:before 
+  */{
+     content:"\f111"; /* fa-circle */ 
+   }
+
+  /* checked */
+  label > input[type="radio"]:checked + .fa-check-circle:before 
+  /*label > input[type="radio"]:checked +  .fa-file-pdf-o:before, 
+  label > input[type="radio"]:checked + .fa-file-image-o:before, 
+  label > input[type="radio"]:checked +  .fa-file-archive-o:before 
+  */
+   {
+     content:"\f058"; /* fa-circle */ 
+   }
+
+  

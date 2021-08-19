@@ -1,0 +1,44 @@
+<div *ngIf="opts.length">
+<div class="row ">
+     <div class="col-lg-10"  >
+ <div class="panel panel-primary">
+   <!-- col-md-6 table-row text-left btn-block" -->
+     <div class="panel-heading ">
+       Select Your Pay Option 
+     </div>
+    
+    <div class="panel-body" >
+   <!-- <div class="col-md-4 table-row text-center row-list " > 
+       <label class="radio-inline"><input type="radio" name="optradio"></label>
+    </div>
+     <div class="col-md-4 table-row text-center row-list " > 
+        <label class="radio-inline">{{payopt.modeType}}</label>
+    </div>-->
+   <ul class="opts">
+          <li *ngFor="let payopt of opts"
+            [class.selected]="payopt === selectedOpts"
+            (click)="onSelect(payopt)">
+            {{payopt.modeType}}
+          </li>
+        </ul>
+     </div>
+    </div> 
+</div>
+
+     <!--
+https://stackoverflow.com/questions/45434570/how-can-i-integrate-paytm-in-angular4
+
+
+<div class="row ">
+    <div  class="col-sm-2  text-center">
+      </div>
+  
+  <div   class="col-md-4 text-center">
+     <button   type="button" class="btn btn-primary">
+           Next</button></div>
+  <div  class="col-md-4 text-center">
+    <button   type="button" class="btn btn-default border-dark"> Previous</button></div>
+  <div  class="col-sm-2  text-center">
+      </div>
+</div> -->
+</div>

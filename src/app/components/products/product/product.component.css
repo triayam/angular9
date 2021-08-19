@@ -1,0 +1,53 @@
+.product-image {
+  font-size: 6em;
+  color: lightgray;
+}
+
+.product-price {
+  font-weight: bold;
+}
+.col {
+  display: table-cell; /* Make elements inside the container behave like table cells */
+}
+.badix {
+  display: block;
+  background-color: aqua;
+
+}
+.my-list {
+  width: 100%;
+  border: 1px solid #f5efef;
+  border-radius: 5px;
+  box-shadow: 2px 3px 0px #e4d8d8;
+  padding: 10px;
+  float: left;
+  margin: 25px 0;
+  position:relative;
+}
+.my-list h3 {
+  text-align : left;
+  font-size: 24px;
+  font-width: 500;
+  line-height: 21px;
+  margin: 0px;
+  padding: 0px;
+  border-bottom: 1px solid #ccc4c4;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+
+}
+/*  https://bootsnipp.com/snippets/zDAbr */
+.my-list span{float:left; font-weight:bold;}
+.my-list span>last-child { float:right;}
+.my-list .offer {
+   width: 100%;
+   float: left;
+   margin: 5px 0;
+   border-top: 1px solid #ccc4c4;
+   margin-top: 5px;
+   padding-top: 5px;
+   color: #afadad;
+}
+
+
+

@@ -1,0 +1,60 @@
+
+
+ui-menuimg
+.section {
+    
+    padding: 3em 0 0 0em;
+    margin-left: -10em;
+}
+.custom-bg {
+    background-color:beige;
+    border-radius: 3px;
+    /* border-radius: 2px solid #3d3d3d; */
+}
+
+p:last-child { color: #0e4377; }
+.ham-view {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 96px;
+  height: 96px;
+  font-size: 0;
+  text-indent: -9999px;
+  cursor: pointer;
+  outline: none;
+  background: none;
+  border: 0;
+}
+
+
+.ham-view span {
+  display: block;
+  position: absolute;
+  top: 44px;
+  left: 18px;
+  right: 18px;
+  height: 8px;
+  background: #1a2580;
+}
+
+.ham-view span::before,
+.ham-view span::after {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: #1a2580;
+  content: "";
+}
+
+.ham-view span::before {
+  top: -20px;
+}
+
+.ham-view span::after {
+  bottom: -20px;
+}

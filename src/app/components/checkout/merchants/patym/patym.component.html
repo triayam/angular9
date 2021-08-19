@@ -1,0 +1,284 @@
+
+
+<div class="row" >
+  <div class="col-lg-6 text-left">
+    <div class="panel panel-primary">
+      
+      <div class="panel-heading ">
+          <span class="card-text "> PayTM Payment </span>
+      </div>
+      <!-- https://stackblitz.com/edit/angular-kfxw98?file=src%2Fapp%2Fapp.component.html -->
+      <div #payTMError style="display:none">
+          
+           <div> Please do not referesh this page ....  
+                      <br/> <button class="btn btn-primary" disabled>   
+                     <span class="spinner-grow spinner-grow-sm"></span>  
+                            Loading..  
+                       </button>
+             <iframe #myIFrame name="myFrame"> 
+               
+               </iframe>
+           <!--  <form #m="ngForm" novalidate method="post" (submit)="saveForm($event)" action="{{TEST_API_SERVER}}">
+              <div class="form-group" >
+                  <button #saveButton type="submit" class="btn btn-primary btn-sm" form="m" [disabled]="!m.form.valid">        Save
+                   </button>
+                </div>
+               </form> -->
+               <div>
+               
+              </div>
+          </div> 
+          
+        </div>
+        
+    <div #payTMBody class="panel-body bg-panel " > <!-- (ngSubmit)="f.form.valid" #f="ngForm"  -->
+            <form name="form" method="post" ngNoForm   >
+        <!--<div class="col-lg-6 text-center">-->
+      <!-- <div class="col-md-4 text-center"> -->
+         <label class="input-label" for="order_id">OrderID:</label>
+
+          <input type="text" class="form-control input-align"   [(ngModel)]="paytmParams.ORDER_ID"  name="ORDER_ID">
+      <!--    </div>
+       <div class="col-md-4 text-center">-->
+          <label class="input-label" for="txn_amount">Transaction Amount :</label>
+
+           <input type="text" class="form-control input-align"   [(ngModel)]="paytmParams.TXN_AMOUNT" name="TXN_AMOUNT">
+        <div style="display:none">
+           <!-- <label>MID Form </label>-->
+               <input type="text" class="form-control" [(ngModel)]="paytmParams.MID"  name="MID">
+                 <!-- <p *ngIf="MID.invalid && MID.touched">
+                    MID is required.
+                  </p>-->
+                <!--   <label>WEBSITE Form </label>-->
+                <input type="text" class="form-control" [(ngModel)]="paytmParams.WEBSITE"  name="WEBSITE">
+                 <!-- <p *ngIf="WEBSITE.invalid && WEBSITE.touched">
+                    WEBSITE is required.
+                  </p>-->
+               <!--    <label>INDUSTRY_TYPE_ID Form </label>-->
+              <input type="text" class="form-control" [(ngModel)]="paytmParams.INDUSTRY_TYPE_ID"  name="INDUSTRY_TYPE_ID">
+                <!--  <p *ngIf="INDUSTRY_TYPE_ID.invalid && INDUSTRY_TYPE_ID.touched">
+                    INDUSTRY_TYPE_ID is required.
+                  </p>-->
+                 <!--  <label>CHANNEL_ID Form </label>-->
+                  <input type="text" class="form-control" [(ngModel)]="paytmParams.CHANNEL_ID"  name="CHANNEL_ID" >
+                 <!-- <p *ngIf="CHANNEL_ID.invalid && CHANNEL_ID.touched">
+                    CHANNEL_ID is required.
+                  </p>-->
+                  <!-- <label>ORDER_ID Form </label>-->
+                <!-- <input type="text" class="form-control" [(ngModel)]="paytmParams.ORDER_ID"  name="ORDER_ID">-->
+              <!--    <p *ngIf="ORDER_ID.invalid && ORDER_ID.touched">
+                    ORDER_ID is required.
+                  </p>-->
+              <!--     <label>CUST_ID  </label>-->
+              <input type="text" class="form-control" [(ngModel)]="paytmParams.CUST_ID"  name="CUST_ID">
+                 <!-- <p *ngIf="CUST_ID.invalid && CUST_ID.touched">
+                    CUST_ID is required.
+                  </p>-->
+                 <!--  <label>Merchant Form </label>-->
+                 <input type="text" class="form-control" [(ngModel)]="paytmParams.MOBILE_NO"  name="MOBILE_NO">
+                  <!--<p *ngIf="MOBILE_NO.invalid && MOBILE_NO.touched">
+                    MOBILE_NO is required.
+                  </p>-->
+               <!--    <label>EMAIL Form </label>-->
+              <input type="text" class="form-control" [(ngModel)]="paytmParams.EMAIL"  name="EMAIL">
+                 <!-- <p *ngIf="EMAIL.invalid && EMAIL.touched">
+                    EMAIL is required.
+                  </p>-->
+               <!--    <label>TXN_AMOUNT Form </label>-->
+                <!-- <input type="text" class="form-control" [(ngModel)]="paytmParams.TXN_AMOUNT"  name="TXN_AMOUNT">-->
+                 <!-- <p *ngIf="TXN_AMOUNT.invalid && TXN_AMOUNT.touched">
+                    TXN_AMOUNT is required.
+                  </p>-->
+               <!--    <label>CALLBACK_URL Form </label>-->
+                 <input type="text" class="form-control" [(ngModel)]="paytmParams.CALLBACK_URL"  name="CALLBACK_URL">
+                 <!-- <p *ngIf="CALLBACK_URL.invalid && CALLBACK_URL.touched">
+                    CALLBACK_URL is required.
+                  </p>-->
+                  <input type="text" class="form-control" [(ngModel)]="paytmParams.CHECKSUMHASH"  name="CHECKSUMHASH">    
+         </div>
+    <!--  
+        </div>
+           <div class="col-md-4 text-center">
+    -->
+          <div class="form-group">
+               <!--<button class="btn btn-primary d-none" #payBut   type="submit" >Submit</button>-->
+                <button class="btn btn-primary btn-block"   (click)="onSend($event)" >Submit</button>
+            </div> 
+                 <!-- (click)="onSend($event)" type="submit" data-toggle="modal" data-target="#myModal" -->
+      <!--  </div>-->
+      </form>
+        
+    <!-- Modal -->
+      <!-- <div id="myModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">-->
+
+            <!-- Modal content-->
+           <!-- <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Proceeding to Payment Gateway</h4>
+              </div>
+              <div class="modal-body">
+                <p>This shall redirect you to the External Provider .</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+
+          </div>
+        </div>  -->  
+        
+      <!--  <ng-template #content let-modal>
+         
+         <div class="modal-header modal-heading">
+            <h5 class="modal-title" id="modal-basic-title">Confirmation Payment Gateway</h5>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">×</span>
+          </button>
+         </div>
+         <div class="modal-body modal-back">Please Confirm this shall foward to External Pay Service  
+          </div>
+            <div class="modal-footer modal-back">
+             <form name="payForm"  (ngSubmit)="p.payForm.valid " #p="ngForm" action="{{LOCAL_SERVER}}" >
+             <div style="display:none">
+               <input type="text" class="form-control" [(ngModel)]="paytmParams.MID"  name="MID">
+                <input type="text" class="form-control" [(ngModel)]="paytmParams.WEBSITE"  name="WEBSITE">
+              <input type="text" class="form-control" [(ngModel)]="paytmParams.INDUSTRY_TYPE_ID"  name="INDUSTRY_TYPE_ID">
+              <input type="text" class="form-control" [(ngModel)]="paytmParams.CHANNEL_ID"  name="CHANNEL_ID" >
+             <input type="text" class="form-control" [(ngModel)]="paytmParams.CUST_ID"  name="CUST_ID">
+              <input type="text" class="form-control" [(ngModel)]="paytmParams.MOBILE_NO"  name="MOBILE_NO">
+              <input type="text" class="form-control" [(ngModel)]="paytmParams.EMAIL"  name="EMAIL">
+            <input type="text" class="form-control" [(ngModel)]="paytmParams.CALLBACK_URL"  name="CALLBACK_URL">
+             <input type="text" class="form-control" [(ngModel)]="paytmParams.CHECKSUMHASH"  name="CHECKSUMHASH">    
+            </div>
+            <button class="btn d-none" #payBut  type="submit" >Submit</button>
+           <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+                </form>
+            </div>
+         </ng-template> 
+         -->
+      </div>
+    </div>
+    
+</div>
+ </div>
+<router-outlet>
+</router-outlet>
+
+
+
+<!-- 
+
+
+Transaction UR https://securegw-stage.paytm.in/order/process
+
+
+Test Merchant ID
+bgBkEl45403033186773
+Test Merchant Key
+!AlG9%OnEGCAzlBs
+Website
+WEBSTAGING
+Industry Type
+Retail
+Channel ID (For Website)
+WEB
+Channel ID (For Mobile Apps)
+WAP
+Transaction URL
+https://securegw-stage.paytm.in/order/process
+Transaction Status URL
+https://securegw-stage.paytm.in/order/status
+Production API Details
+
+
+
+-->
+
+<!-- NODE JS 
+
+const https = require('https');
+
+/**
+* import checksum generation utility
+* You can get this utility from https://developer.paytm.com/docs/checksum/
+*/
+const checksum_lib = require('./checksum');
+
+https.createServer(function (req, res) {
+	/* initialize an object with request parameters */
+	var paytmParams = {
+
+		/* Find your MID in your Paytm Dashboard at https://dashboard.paytm.com/next/apikeys */
+		"MID" : "YOUR_MID_HERE",
+
+		/* Find your WEBSITE in your Paytm Dashboard at https://dashboard.paytm.com/next/apikeys */
+		"WEBSITE" : "YOUR_WEBSITE_HERE",
+
+		/* Find your INDUSTRY_TYPE_ID in your Paytm Dashboard at https://dashboard.paytm.com/next/apikeys */
+		"INDUSTRY_TYPE_ID" : "YOUR_INDUSTRY_TYPE_ID_HERE",
+
+		/* WEB for website and WAP for Mobile-websites or App */
+		"CHANNEL_ID" : "YOUR_CHANNEL_ID",
+
+		/* Enter your unique order id */
+		"ORDER_ID" : "YOUR_ORDER_ID",
+
+		/* unique id that belongs to your customer */
+		"CUST_ID" : "CUSTOMER_ID",
+
+		/* customer's mobile number */
+		"MOBILE_NO" : "CUSTOMER_MOBILE_NUMBER",
+
+		/* customer's email */
+		"EMAIL" : "CUSTOMER_EMAIL",
+
+		/**
+		* Amount in INR that is payble by customer
+		* this should be numeric with optionally having two decimal points
+		*/
+		"TXN_AMOUNT" : "ORDER_TRANSACTION_AMOUNT",
+
+		/* on completion of transaction, we will send you the response on this URL */
+		"CALLBACK_URL" : "YOUR_CALLBACK_URL",
+	};
+
+	/**
+	* Generate checksum for parameters we have
+	* Find your Merchant Key in your Paytm Dashboard at https://dashboard.paytm.com/next/apikeys 
+	*/
+	checksum_lib.genchecksum(paytmParams, "YOUR_KEY_HERE", function(err, checksum){
+
+		/* for Staging */
+		var url = "https://securegw-stage.paytm.in/order/process";
+
+		/* for Production */
+		// var url = "https://securegw.paytm.in/order/process";
+
+		/* Prepare HTML Form and Submit to Paytm */
+		res.writeHead(200, {'Content-Type': 'text/html'});
+		res.write('<html>');
+		res.write('<head>');
+		res.write('<title>Merchant Checkout Page</title>');
+		res.write('</head>');
+		res.write('<body>');
+		res.write('<center><h1>Please do not refresh this page...</h1></center>');
+		res.write('<form method="post" action="' + url + '" name="paytm_form">');
+		for(var x in paytmParams){
+			res.write('<input type="hidden" name="' + x + '" value="' + paytmParams[x] + '">');
+		}
+		res.write('<input type="hidden" name="CHECKSUMHASH" value="' + checksum + '">');
+		res.write('</form>');
+		res.write('<script type="text/javascript">');
+		res.write('document.paytm_form.submit();');
+		res.write('</script>');
+		res.write('</body>');
+		res.write('</html>');
+		res.end();
+	});
+}).listen(3000);
+
+
+
+-->

@@ -1,0 +1,28 @@
+
+:root {
+    --blue: #1e90ff;
+    --white: #ffffff;
+    --bs-sm: 0 1px 2px rgba(0,0,0,0.05),0 1px 4px rgba(0,0,0,0.05),0 2px 8px
+      rgba(0,0,0,0.05);
+  }
+
+.job-banner-example  {
+
+    position: relative;
+    display: inline-block; 
+    font-size: 14px;
+     border: 1px solid #f1e5bc; 
+    /* border: 1px solid var(--black-100); */
+    border-radius:3px;
+    font-family: 'Font Awesome 5 Brands', 'Font Awesome 5 Free ', "Verdana", Ms-Serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: auto;
+    font-variant: normal;
+    width: 30%;
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 255, .2);
+    background-color: #fdf7e3;
+
+
+
+
+}

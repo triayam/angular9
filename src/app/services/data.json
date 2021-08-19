@@ -1,0 +1,25 @@
+{
+  "products" : [ {
+    "id": 1, "name": "Blue item", "price": 123.09, "colors": ["blue"],
+    "prodID":  "24123", "productName":  "Shirt", "productCost": "23" ,
+    "productLogo":  "assets/img/products/t-shirt.jpg",
+    "productMiniLogo":  "assets/img/products/mini-t-shirt.jpg"}
+    ,
+    {
+      "id": 2, "name": "Green and gray", "price": 99.09, "colors": ["green", "gray"],
+      "prodID":  "24143", "productName":  "Sweat-Shirt", "productCost": "999" ,
+      "productLogo":  "assets/img/products/sweat-shirt.jpg",
+      "productMiniLogo":  "assets/img/products/mini-sweat-shirt.jpg"},
+    {
+      "id": 3, "name": "Blue item", "price": 123.09, "colors": ["green"],
+      "prodID":  "24123", "productName":  "Shirt", "productCost": "23" ,
+      "productLogo":  "assets/img/products/t-shirt.jpg",
+      "productMiniLogo":  "assets/img/products/mini-t-shirt.jpg"},
+    {
+      "id": 4, "name": "Blue item", "price": 123.09, "colors": ["gray"],
+      "prodID":  "24123", "productName":  "Shirt", "productCost": "23" ,
+      "productLogo":  "assets/img/products/t-shirt.jpg",
+      "productMiniLogo":  "assets/img/products/mini-t-shirt.jpg"}
+  ]
+}
+

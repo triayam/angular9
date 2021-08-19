@@ -1,0 +1,17 @@
+.filter-list {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.filter-activated {
+  border: 3px red solid;
+}
+
+.col-container {
+  display: table; /* Make the container element behave like a table */
+  width: 100%; /* Set full-width to expand the whole page */
+}
+.color-filter {
+  display: block;
+  width:12px;
+}

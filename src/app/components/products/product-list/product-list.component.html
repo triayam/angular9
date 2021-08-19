@@ -1,0 +1,70 @@
+
+<div class="container">
+
+       <!-- class="list-products" -->
+    
+    
+      
+       
+     
+      <div class="row">
+         <div class="col-lg-5 text-left">
+          <button class="btn btn-light active previous">  Product List
+         </button>
+         </div>
+        <div class="col-lg-5 text-right">
+          <a href="javascript:void(0)" id="cart" >
+            <i class="fa fa-shopping-cart" (click)="popCart()"> Cart <span class="badge">{{(shoppingCartItems$ | async).length}}
+              </span>
+            </i>
+           </a>
+            <!-- cart summary component -->
+            <div *ngIf="cartClicked" >
+            <app-summarypopup class=""  [products]="products"  >
+                </app-summarypopup>
+		     </div>
+            <!-- cart summary component -->
+            <!-- not required --> 
+            
+            <!-- not required --> 
+        </div>
+       </div>
+        <div class="list-filter">
+
+           <app-spa-product-filters
+            [availableFilters]="filters"
+            [activatedFilters]="activeFilters"
+            (activeFilters)="updateActivatedFilters($event)"
+          ></app-spa-product-filters>
+
+      </div>
+      <div class="row">
+        <div class="col-md-4 align-content-lg-start" >
+        <!--  <form class="form-inline">-->
+        <div class="input-group my-group" >
+          <!--<input type="text" class="form-control" name="snpid" placeholder="color"/>-->
+          <div class="input-group-prepend"><span class="input-group-text">Color</span></div>
+          <select #mySelect [(ngModel)]="userColor"  (change)='onOptionsSelected(mySelect.value)' class="form-control"  data-live-search="true" title="Please select a color ...">
+          <option [value]="i.color"  [selected]="i.color==='blue'"  *ngFor="let i of filters">{{i.color}} </option>
+          </select>
+        <!--  <span class="input-group-btn">
+            <button class="btn btn-default my-group-button" type ="button"> Filter</button>
+          </span>-->
+         </div>
+         <!-- </form>-->
+        </div>
+      </div>
+      <div  class="row" *ngFor="let product of itemsAfterFilter()">
+     <!-- -->
+
+       <app-spa-product
+        [prodID]="product.prodID"
+        [productName]="product.productName"
+        [productCost]="product.productCost"
+        [productLogo]="product.productMiniLogo">
+        </app-spa-product>
+
+ </div>
+
+</div>
+

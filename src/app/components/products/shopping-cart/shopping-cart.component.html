@@ -1,0 +1,12 @@
+<p>You have {{shoppingCartItems.length}} items in your bag</p>
+<div *ngFor="let item of shoppingCartItems">
+  <app-spa-product
+    [id]="item.id"
+    [name]="item.name"
+    [price]="item.price"
+    [currency]="item.currency">
+  </app-spa-product>
+  <app-spa-color-list [colors]="item.colors"></app-spa-color-list>
+  <button class="remove-item" (click)="removeItem(item)">Remove</button>
+</div>
+<p>Total: {{getTotal() | async}}</p>

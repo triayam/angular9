@@ -1,0 +1,52 @@
+public paytmParams = {
+		// Find your MID in your Paytm Dashboard at https://dashboard.paytm.com/next/apikeys */
+		"MID" : "bgBkEl45403033186773",
+        // Find your WEBSITE in your Paytm Dashboard at https://dashboard.paytm.com/next/apikeys */
+		"WEBSITE" : "https://65ivjubl53.execute-api.us-east-1.amazonaws.com",
+        // * Find your INDUSTRY_TYPE_ID in your Paytm Dashboard at https://dashboard.paytm.com/next/apikeys  
+		"INDUSTRY_TYPE_ID" : "Retail",
+		// WEB for website and WAP for Mobile-websites or App */
+		"CHANNEL_ID" : "WEB",
+		// Enter your unique order id */
+		"ORDER_ID" : "YOUR_ORDER_ID",
+		// unique id that belongs to your customer */
+		"CUST_ID" : "CUSTOMER_ID",
+		// customer's mobile number */
+		"MOBILE_NO" : "9561700687",
+		// customer's email */
+		"EMAIL" : "vickyscab24@gmail.com",
+		//  Amount in INR that is payble by customer
+		// this should be numeric with optionally having two decimal points
+		/
+		"TXN_AMOUNT" : "23",
+		// on completion of transaction, we will send you the response on this URL */
+		"CALLBACK_URL" : "https://65ivjubl53.execute-api.us-east-1.amazonaws.com",
+        "CHECKSUMHASH" : ""
+	};
+
+ public paytmParams = {
+		/* Find your MID in your Paytm Dashboard at https://dashboard.paytm.com/next/apikeys */
+		 MID  : 'bgBkEl45403033186773',
+        /* Find your WEBSITE in your Paytm Dashboard at https://dashboard.paytm.com/next/apikeys */
+		 WEBSITE : 'https://65ivjubl53.execute-api.us-east-1.amazonaws.com',
+        /* Find your INDUSTRY_TYPE_ID in your Paytm Dashboard at https://dashboard.paytm.com/next/apikeys */
+		INDUSTRY_TYPE_ID : 'Retail',
+		/* WEB for website and WAP for Mobile-websites or App */
+		CHANNEL_ID : 'WEB',
+		/* Enter your unique order id */
+		ORDER_ID : 'YOUR_ORDER_ID',
+		/* unique id that belongs to your customer */
+		CUST_ID : 'CUSTOMER_ID',
+		/* customer's mobile number */
+		MOBILE_NO : '9561700687',
+		/* customer's email */
+		EMAIL : 'vickyscab24@gmail.com',
+		/**
+		* Amount in INR that is payble by customer
+		* this should be numeric with optionally having two decimal points
+		*/
+		TXN_AMOUNT : '23',
+		/* on completion of transaction, we will send you the response on this URL */
+		CALLBACK_URL : 'http://localhost:4200/#/payoptions/Mobile',
+        CHECKSUMHASH : 'https://65ivjubl53.execute-api.us-east-1.amazonaws.com',
+	};

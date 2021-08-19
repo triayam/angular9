@@ -1,0 +1,61 @@
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+.badge {
+  background-color: #6394F8;
+  border-radius: 10px;
+  color: white;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1;
+  padding: 3px 7px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.list-products {
+  display: flex;
+  justify-content: center;
+  flex-float: row wrap;
+  align-content: flex-end;
+}
+.list-filter {
+  display: flex;
+  justify-content: center;
+  flex-float: row wrap;
+  align-content: flex-end;
+}
+.list-product {
+  margin-left: 10px;
+  margin-right:10px;
+}
+.filter-product {
+  display: block;
+  float: right;
+  border-radius: 4px 4px 0 0;
+  color: #323232;
+  font-size: 1.25em;
+  font-weight: 100;
+  line-height: 1;
+  padding: 0.5em 0.75em;
+}
+.my-group {
+ /* overflow: visible;
+   z-index: 3435;
+
+  */
+}
+.col-container {
+  display: table; /* Make the container element behave like a table */
+  width: 100%; /* Set full-width to expand the whole page */
+}
+.previous {
+  text-align: left;
+}
+
+.next {
+  text-align: right;
+}
+

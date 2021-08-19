@@ -1,0 +1,187 @@
+<!-- <!DOCTYPE html> -->
+<!-- <html lang="en"> -->
+
+<head>
+  <title> Base File transfer</title>
+  <base href="src">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+   <link href="../../../assets/awesome/css/font-awesome.css" type="text/css" rel="stylesheet"> 
+ <!--   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+ 
+  <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet"
+  type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"
+  type="text/javascript"></script>
+<style type="text/css">
+  .hide { display:none; width:3px;}
+
+  input[type="checkbox"] + .fa, 
+  input[type="checkbox"] + label > .fa, 
+  input[type="radio"] + .fa, 
+  input[type="radio"] + label > .fa 
+  { cursor: pointer;}
+  /* unchecked */ 
+
+  input[type="radio"] + label > .fa-check-circle:before, 
+  input[type="radio"] +  .fa-check-circle:before
+   {
+     content:"\f111"; /* fa-circle */ 
+   }
+
+  /* checked */
+  input[type="radio"]:checked + label > .fa-check-circle:before, 
+  input[type="radio"]:checked +  .fa-check-circle:before
+   {
+     content:"\f058"; /* fa-circle */ 
+   }
+</style>
+</head>
+ 
+<body>
+  
+<!-- <div class="modal-header">
+  <h4 class="modal-title">{{my_file_title}}</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+
+<div class="modal-body">
+  <p> {{my_file_content}}</p>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+</div> -->
+<!-- https://gateway.temporal.cloud/ipns/docs.api.temporal.cloud/ipfs.html#example
+-->
+
+ <!-- form>(div.form-group>label+input[formControlName].formControl)*12 -->
+  <script >
+    var today = new Date( new Date().getFullYear(), new Date().getMonth(), new Date().getDay());
+   console.log(" clicked ")
+    $(document).on("click", "input[type='text']",
+function () { 
+    console.log(" Input touced ");
+}
+    );
+ 
+ 
+ /* 
+
+  { 
+        uiLibrary: 'bootstrap4',
+        iconsLibrary: 'fontawesome',
+        minDate:today,
+        maxDate: function(){
+
+          return new Date().setDate(today+30) - today;
+        }
+
+     }
+ */
+  </script>
+   <div class="container">
+    <h4> <i class="fa fa-file"></i> File Transfer </h4> 
+     <form>
+       
+       <div class="form-group row">
+         <label id="fileName" for="fileName" class="col-3 col-form-label">File Name </label>
+         <div class="col-3">
+           <input type="text" class="form-control" name="inputName" id="inputName" placeholder="" [(ngModel)]={fileUpload.name}>
+         </div>
+       </div>
+       <div class="form-group row">
+        <label for="fileDate" class="col-3 col-form-label">File Date </label>
+        <div class="col-3">
+          <input type="text" class="form-control" name="fileDate" id="fileDate" placeholder="" [(ngModel)]={fileUpload.date}>
+        </div>
+      </div>
+       <fieldset class="form-group row">
+         <legend class="col ">File Attributes</legend>
+         <div class="col ">
+          <label class="col-form-label-sm">Type</label> 
+          <div class="custom-control mb">
+           
+            <label class="">
+            <input type="radio" name="fileUpload.type" id="fileUpload.type"   class="hide"/>
+            <i class="fa fa-fw fa-check-circle" aria-hidden="true"></i>&nbsp;<i class="fa fa-file-pdf-o" aria-hidden="true"></i></label>
+          
+            <label class=" " >
+              <input type="radio" name="fileUpload.type" id="fileUpload.type"   class="hide"/>
+              <i class="fa fa-fw fa-check-circle" aria-hidden="true"></i>&nbsp;<i class="fa fa-file-image-o " aria-hidden="true"></i></label>
+           
+              <label class=" ">
+              <input type="radio" name="fileUpload.type" id="fileUpload.type"   class="hide"/>
+              <i class="fa fa-fw fa-check-circle" aria-hidden="true"></i>&nbsp;<i class="fa fa-file-archive-o" aria-hidden="true"></i></label>
+  
+          </div>
+         </div>
+        <div class="col ">
+          <label class="col-form-label-sm">Size</label>
+          <div class="custom-control  mb">
+              <input type="checkbox"  name="fileUpload.size" id="fileUpload.size"  class="">
+             <label class="" for="fileUpload.size"> <i class="fa fa-database fa-0x" aria-hidden="true">< 10 MB</i> </label>
+            
+          
+            <input type="checkbox"  name="fileUpload.size" id="fileUpload.size"  class="">
+           <label class="" for="fileUpload.size"> <i class="fa fa-database fa-1.5x" aria-hidden="true">< 50 MB</i>  </label>
+          
+         
+          <input type="checkbox"  name="fileUpload.size" id="fileUpload.size"  class="">
+         <label class="" for="fileUpload.size"> <i class="fa fa-database fa-2x" aria-hidden="true"></i>  < 200 MB</label>
+        
+       </div>
+           <!--<label class="custom-control custom-checkbox">
+            
+             <span class="custom-control-indicator"></span>
+               <i class="fa fa-database" aria-hidden="true"></i>
+           </label>-->
+           </div>
+         
+
+       </fieldset>
+       <div class="form-group row">
+
+         <div class="offset-sm-2 col">
+           <button type="button" class="btn btn-primary">Validate</button>
+         </div>
+         <div class="offset-sm-2 col">
+           <button type="submit" class="btn btn-primary">Submit</button>
+         </div>
+       
+    
+       </div>
+     </form>
+   </div>
+     
+<script type="text/javascript">
+      $("#fileDate").click(function() {
+        console.log("fooled")
+      }) 
+      $('#fileDate').datepicker();
+</script>
+    <!-- https://www.youtube.com/watch?v=RYn3aucE2l4 --> 
+ <!-- <div class="container">
+
+ <div class="row">
+  <div class="col-sm"> 
+         
+  </div>
+  <div class="col-sm">
+    One of three columns
+  </div>
+  <div class="col-sm">
+    One of three columns
+  </div>
+</div>
+</div>
+-->
+
+<!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+
+<!-- </body>
+</html> -->
+

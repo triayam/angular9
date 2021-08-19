@@ -1,0 +1,64 @@
+<app-pay-tm-test [payparams] = "paytmparams"></app-pay-tm-test>
+
+
+<!-- 
+<style type="text/css">
+/*.button-bg  { 
+    background-color: #fdfdfd;
+    border-radius: 2px;
+}*/
+  .button-bg  { 
+    background-color: #00c4a7;
+    border-radius: 3px;
+}  
+.custom-bg {
+    background-color:beige;
+    border-radius: 3px;
+    /* border-radius: 2px solid #3d3d3d; */
+}
+
+</style>
+<nav class="navbar navbar-dark custom-bg" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+     <app-logo></app-logo>
+
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div class="navbar-menu">
+       <div class="navbar-start">AA</div> 
+      <div class="navbar-end">
+        <a class="navbar-item " routerLink="/" routerLinkActive="active">
+          Dashboard
+        </a>
+        <a class="navbar-item " routerLink="/shipproducts" routerLinkActive="active">
+         Products
+        </a>
+        <a class="navbar-item " routerLink="/settings" routerLinkActive="active">
+         Settings
+        </a>
+        <a class="navbar-item "  (click)="logoutAction()">
+          <span class="icon has-text-danger">
+            <i class="fas fa-ban"></i>
+          </span> Logout
+        </a>
+
+      </div>
+    </div>
+  </nav>
+
+  <div class="content">
+       <app-user> the is user </app-user> 
+    <section class="section">
+      <div class="container mainBlock">
+        <router-outlet></router-outlet>
+      </div>
+    </section>
+  </div>
+
+
+--> 

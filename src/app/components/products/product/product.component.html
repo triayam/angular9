@@ -1,0 +1,45 @@
+
+<!--<div class="panel panel-default">
+  <div class="panel-heading">-->
+<!--<div *ngIf="(width === '3')">
+  <div class="card " [ngStyle]="{'width': width+'em', 'height':height+'em'}" >
+</div>
+
+  <div *ngIf="!(width === '3')">
+    <div class="card " >
+    [ngStyle]="{'width': width+'em', 'height':height+'em'}"
+    </div> -->
+
+
+       <div  [ngClass]="{
+      'col-md-6':isDetail === false,
+      'col-md-12':isDetail === true
+        }">
+         <div class="my-list">
+           <div *ngIf="isDetail; else isLoogedOut">
+             <h3>  {{productName}}</h3>
+             <img src="{{productLogo}}"/>
+             <span>{{getCurrency()}} {{productCost}}</span>
+             <span class="pull-right"> SKU:100022</span>
+             <div class="offer">Extra 5% Off. Cart value Rs 300</div>
+           </div>
+
+           <ng-template #isLoogedOut>
+             <h3> <a routerLink="products/details/{{prodID}}">{{productName}}</a> </h3>
+             <img src="{{productLogo}}"/>
+             <span>{{getCurrency()}} {{productCost}}</span>
+             <span class="pull-right"> SKU:100022</span>
+             <div class="offer">Extra 5% Off. Cart value Rs 300</div>
+           </ng-template>
+
+
+         </div>
+
+
+
+
+
+      </div>
+
+
+

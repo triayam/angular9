@@ -1,0 +1,80 @@
+<style type="text/css">
+/*.button-bg  { 
+    background-color: #fdfdfd;
+    border-radius: 2px;
+}*/
+  .button-bg  { 
+    background-color: #00c4a7;
+    border-radius: 3px;
+}  
+.custom-bg {
+    background-color:beige;
+    border-radius: 3px;
+    /* border-radius: 2px solid #3d3d3d; */
+}
+
+</style>
+
+<nav class="navbar navbar-dark custom-bg" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <app-logo></app-logo>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <!-- <div class="navbar-start">AA</div> -->
+    <div class="navbar-end">
+    
+      <a class="navbar-item " routerLink="/signup" routerLinkActive="active"> 
+        Signup
+      </a>
+      <a class="navbar-item " routerLink="/" routerLinkActive="active">
+       Login
+      </a>
+      <!-- <a class="navbar-item">-->
+
+	   <!--  <div class="ui-menuimg">
+            <a href="javascript:void(0)" id="A1" class="ham-view" (click)="toggleShowDiv()">
+                <img alt="Idirect" src="assets/img/menu_icon.png" style="height: 1.8em;" >
+            </a>
+
+        </div>-->
+		 <!-- <app-slideinout class="" [@slideInOut]="animationState" > </app-slideinout>-->
+		  <!-- <div class="wrapper" style="visiblity: hidden">
+			  <div class="divA" [@slideInOut]="animationState" style="width: 100px;height 20px; background-color: red;">
+					 </div>
+
+			</div>-->
+
+         <!--  -->
+      <!--   </a>-->
+		<!-- <a class="navbar-item " routerLink="/shipproducts" routerLinkActive="active">
+			Ship Products
+      </a> -->
+
+    </div>
+    <!--<div class="navbar-end">
+      <app-slideinout> </app-slideinout>
+      </div> -->
+  </div>
+</nav>
+<div class="slideout">
+
+  </div>
+<div class="content">
+    <app-user></app-user> 
+  <section class="section">
+    <div class="container mainBlock">
+<!--
+      <p> this is CSS code</p>
+      <p> this  is green tea </p>
+      <p> this is cool </p>-->
+
+
+      <router-outlet></router-outlet>
+    </div>
+  </section>
+</div>
